@@ -1,0 +1,34 @@
+<!-- 
+/**
+ *  __          __  _    _____ _____  ______ 
+ *  \ \        / / | |  |_   _|  __ \|  ____|
+ *   \ \  /\  / /__| |__  | | | |  | | |__   
+ *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|  
+ *     \  /\  /  __/ |_) || |_| |__| | |____ 
+ *      \/  \/ \___|_.__/_____|_____/|______|
+ *                                                                            
+ *  @author André Ferreira <andrehrf@gmail.com>
+ *  @license MIT
+ */
+-->
+<div class="wi-panelsbar-left">
+    <%  for(var key in itens){
+            if(itens[key].position == "left"){
+    %>
+    <div class="wi-panelsbar-left-item" rel="#wi-panels-<%= key %>-panel" id="wi-panels-<%= key %>"><%= itens[key].display %></div>
+    <%
+            }
+        }
+    %>
+</div>
+
+<%  for(var key in itens){
+        if(itens[key].position == "left"){
+%>
+<div class="wi-panelsbar-left-panel animated slideInLeft" id="wi-panels-<%= key %>-panel" rel="#wi-panels-<%= key %>">
+    <%- itens[key].panel %>
+</div>
+<%
+        }
+    }
+%>

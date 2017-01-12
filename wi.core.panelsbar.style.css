@@ -1,0 +1,81 @@
+/**
+ *  __          __  _    _____ _____  ______ 
+ *  \ \        / / | |  |_   _|  __ \|  ____|
+ *   \ \  /\  / /__| |__  | | | |  | | |__   
+ *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|  
+ *     \  /\  /  __/ |_) || |_| |__| | |____ 
+ *      \/  \/ \___|_.__/_____|_____/|______|
+ *                                                                            
+ *  @author André Ferreira <andrehrf@gmail.com>
+ *  @license MIT
+ */
+
+.wi-panelsbar-left{
+    position: fixed;
+    height: 35px;
+    left: 0px;
+    width: 100%;
+    z-index: 99999;
+    margin-top: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transform-origin: 17px 18px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);    
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: var(--wi-default-bg-color);
+    color: var(--wi-navbar-color);
+}
+
+.wi-panelsbar-left-item{
+    padding: 10px 10px 6px 10px;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: default;
+    margin-left: -1px;
+    margin-right: 2px;
+    font-family: Helvetica, Arial;
+    font-size: 12px;
+    color: #989898;
+    text-shadow: 0;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    height: 18px;
+}
+
+.wi-panelsbar-left-item:hover{
+    background-color: var(--wi-default-bg2-color);
+}
+
+.wi-panelsbar-left-item-active{
+    border: var(--wi-default-border);
+    background-color: var(--wi-default-bg2-color);
+    box-shadow: -1px 0 rgba(255, 255, 255, 0.06) inset, -1px 0 rgba(255, 255, 255, 0.06);
+    border-bottom: 0px;
+    margin-top: -2px;
+    padding-bottom: 8px;
+    margin-left: -2px;
+    margin-right: 1px;
+}
+
+.wi-panelsbar-left-panel{
+    position: fixed;
+    width: 300px;
+    left: 34px;
+    top: 28px;
+    bottom: -1px;
+    z-index: 99998;
+    background-color: var(--wi-default-bg2-color);
+    border: var(--wi-default-border);
+    box-shadow: var(--wi-default-box-shadow);
+    -webkit-animation-duration: 0.1s;
+    animation-duration: 0.1s;
+    display: none;
+}
