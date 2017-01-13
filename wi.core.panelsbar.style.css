@@ -78,4 +78,23 @@
     -webkit-animation-duration: 0.1s;
     animation-duration: 0.1s;
     display: none;
+    overflow: hidden;
+}
+
+.wi-panelsbar-left-panel-contents{
+    position: relative;
+    margin: auto;
+    overflow: auto;
+    display: block;
+    width: calc(100% - 5px);
+    height: 100%;
+    z-index: 99998;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.wi-panelsbar-left-panel .ui-resizable-e{
+    right: 0px;
+    z-index: 999999;
 }
