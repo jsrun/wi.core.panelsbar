@@ -14,6 +14,7 @@
     position: fixed;
     height: 35px;
     left: 0px;
+    top: 8px;
     width: 100%;
     z-index: 99999;
     margin-top: 20px;
@@ -59,7 +60,7 @@
     background-color: var(--wi-default-bg2-color);
     box-shadow: -1px 0 rgba(255, 255, 255, 0.06) inset, -1px 0 rgba(255, 255, 255, 0.06);
     border-bottom: 0px;
-    margin-top: -2px;
+    margin-top: -4px;
     padding-bottom: 8px;
     margin-left: -2px;
     margin-right: 1px;
@@ -68,7 +69,7 @@
 .wi-panelsbar-left-panel{
     position: fixed;
     width: 300px;
-    left: 34px;
+    left: 35px;
     top: 28px;
     bottom: -1px;
     z-index: 99998;
@@ -86,12 +87,14 @@
     margin: auto;
     overflow: auto;
     display: block;
-    width: calc(100% - 5px);
+    width: calc(100% - 13px);
     height: 100%;
     z-index: 99998;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    margin-top: 2px;
+    margin-left: 10px;
 }
 
 .wi-panelsbar-left-panel .ui-resizable-e{
