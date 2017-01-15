@@ -15,7 +15,7 @@
     height: 35px;
     left: 0px;
     top: 8px;
-    width: 100%;
+    width: calc(100% - 80px);
     z-index: 99999;
     margin-top: 20px;
     -webkit-user-select: none;
@@ -71,7 +71,7 @@
     width: 300px;
     left: 35px;
     top: 28px;
-    bottom: -1px;
+    bottom: 25px;
     z-index: 99998;
     background-color: var(--wi-default-bg2-color);
     border: var(--wi-default-border);
