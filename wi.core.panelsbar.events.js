@@ -13,14 +13,14 @@
 "use strict";
 
 (function(){
-    $(".wi-tabs").css("margin-left", "35px");
+    $(".wi-tabs").css("margin-left", "33px");
     
     $(".wi-panelsbar-left-item").click(function(){
         var _this = this;
         
         if($($(_this).attr("rel")).css("display") === "none"){
             if($(".wi-panelsbar-left-item-active").length <= 0)
-                $(".wi-tabs").animate({marginLeft: (parseInt($($(_this).attr("rel")).css("width")) + 36)+"px"}, 100);
+                $(".wi-tabs").animate({marginLeft: (parseInt($($(_this).attr("rel")).css("width")) + 35)+"px"}, 100);
             
             $($(_this).attr("rel")).addClass("wi-panelsbar-left-panel-active").css("display", "block").animateCss("slideInLeft", function(){
                 $($(_this).attr("rel")).removeClass("slideInLeft");
@@ -31,7 +31,7 @@
         }
         else{
             if($(".wi-panelsbar-left-item-active").length == 1)
-                $(".wi-tabs").animate({marginLeft: "35px"}, 100);
+                $(".wi-tabs").animate({marginLeft: "33px"}, 100);
             
             $($(_this).attr("rel")).removeClass("wi-panelsbar-left-panel-active").animateCss("slideOutLeft", function(){
                 $($(_this).attr("rel")).css("display", "none");
@@ -51,7 +51,7 @@
         minWidth: 200,
         maxWidth: 1000,
         resize: function(event, ui){
-            $(".wi-tabs").css({marginLeft: (ui.size.width+36)+"px"});            
+            $(".wi-tabs").css({marginLeft: (ui.size.width+33)+"px"});            
             webide.tabs.layout.updateSize($(".wi-tabs-contents").width, $(".wi-tabs-contents").height);
         }
     });
