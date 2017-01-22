@@ -1,0 +1,15 @@
+{
+    "name": "wi.core.sidebar",
+    "version": "0.2.1",
+    "description": "WebIDE side panels",
+    "author": "André Ferreira <andrehrf@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jsrun/wi.core.sidebar"
+    },
+    "bugs": {
+        "url": "https://github.com/jsrun/wi.core.sidebar/issues"
+    },
+    "homepage": "https://github.com/jsrun/wi.core.sidebar"
+}
