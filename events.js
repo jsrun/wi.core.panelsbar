@@ -1,52 +1,52 @@
 /**
- *  __          __  _    _____ _____  ______ 
- *  \ \        / / | |  |_   _|  __ \|  ____|
- *   \ \  /\  / /__| |__  | | | |  | | |__   
- *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|  
- *     \  /\  /  __/ |_) || |_| |__| | |____ 
- *      \/  \/ \___|_.__/_____|_____/|______|
- *                                                                            
+ *  __          __  _    _____ _____  ______    _____ _     _      _                
+ *  \ \        / / | |  |_   _|  __ \|  ____|  / ____(_)   | |    | |               
+ *   \ \  /\  / /__| |__  | | | |  | | |__    | (___  _  __| | ___| |__   __ _ _ __ 
+ *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|    \___ \| |/ _` |/ _ \ '_ \ / _` | '__|
+ *     \  /\  /  __/ |_) || |_| |__| | |____ _ ____) | | (_| |  __/ |_) | (_| | |   
+ *      \/  \/ \___|_.__/_____|_____/|______(_)_____/|_|\__,_|\___|_.__/ \__,_|_|   
+ *                                                                                                                                                     
  *  @author André Ferreira <andrehrf@gmail.com>
  *  @license MIT
  */
-
 "use strict";
 
 (function(){
     $(".wi-tabs").css("margin-left", "33px");
+    $(".wi-tabs").css("margin-right", "38px");
     
-    $(".wi-panelsbar-left-item").click(function(){
+    $(".wi-sidebar-left-item").click(function(){
         var _this = this;
         
         if($($(_this).attr("rel")).css("display") === "none"){
-            if($(".wi-panelsbar-left-item-active").length <= 0)
+            if($(".wi-sidebar-left-item-active").length <= 0)
                 $(".wi-tabs").animate({marginLeft: (parseInt($($(_this).attr("rel")).css("width")) + 35)+"px"}, 100);
             
-            $($(_this).attr("rel")).addClass("wi-panelsbar-left-panel-active").css("display", "block").animateCss("slideInLeft", function(){
+            $($(_this).attr("rel")).addClass("wi-sidebar-left-panel-active").css("display", "block").animateCss("slideInLeft", function(){
                 $($(_this).attr("rel")).removeClass("slideInLeft");
-                $(".wi-panelsbar-left-item-active").removeClass("wi-panelsbar-left-item-active");
-                $(_this).addClass("wi-panelsbar-left-item-active");
+                $(".wi-sidebar-left-item-active").removeClass("wi-sidebar-left-item-active");
+                $(_this).addClass("wi-sidebar-left-item-active");
                 webide.tabs.layout.updateSize($(".wi-tabs-contents").width, $(".wi-tabs-contents").height);
             });
         }
         else{
-            if($(".wi-panelsbar-left-item-active").length == 1)
+            if($(".wi-sidebar-left-item-active").length == 1)
                 $(".wi-tabs").animate({marginLeft: "33px"}, 100);
             
-            $($(_this).attr("rel")).removeClass("wi-panelsbar-left-panel-active").animateCss("slideOutLeft", function(){
+            $($(_this).attr("rel")).removeClass("wi-sidebar-left-panel-active").animateCss("slideOutLeft", function(){
                 $($(_this).attr("rel")).css("display", "none");
-                $(_this).removeClass("wi-panelsbar-left-item-active");
+                $(_this).removeClass("wi-sidebar-left-item-active");
                 
                 webide.tabs.layout.updateSize($(".wi-tabs-contents").width, $(".wi-tabs-contents").height);
                 
-                if($(".wi-panelsbar-left-panel-active").length > 0)
-                    $($(".wi-panelsbar-left-panel-active").first().attr("rel")).addClass("wi-panelsbar-left-item-active");
+                if($(".wi-sidebar-left-panel-active").length > 0)
+                    $($(".wi-sidebar-left-panel-active").first().attr("rel")).addClass("wi-sidebar-left-item-active");
             });
         }
     });
     
-    $(".wi-panelsbar-left-panel").resizable({
-        alsoResize: ".wi-panelsbar-left-panel",
+    $(".wi-sidebar-left-panel").resizable({
+        alsoResize: ".wi-sidebar-left-panel",
         handles: "e",
         minWidth: 200,
         maxWidth: 1000,
@@ -56,7 +56,7 @@
         }
     });
     
-    $(".wi-panelsbar-left-panel").first().addClass("wi-panelsbar-left-panel-active").css("display", "block");
-    $(".wi-panelsbar-left-item").first().addClass("wi-panelsbar-left-item-active");
+    $(".wi-sidebar-left-panel").first().addClass("wi-sidebar-left-panel-active").css("display", "block");
+    $(".wi-sidebar-left-item").first().addClass("wi-sidebar-left-item-active");
     $(".wi-tabs").animate({marginLeft: "335px"}, 100);
 })();

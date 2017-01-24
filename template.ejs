@@ -1,21 +1,21 @@
 <!-- 
 /**
- *  __          __  _    _____ _____  ______ 
- *  \ \        / / | |  |_   _|  __ \|  ____|
- *   \ \  /\  / /__| |__  | | | |  | | |__   
- *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|  
- *     \  /\  /  __/ |_) || |_| |__| | |____ 
- *      \/  \/ \___|_.__/_____|_____/|______|
- *                                                                            
+ *  __          __  _    _____ _____  ______    _____ _     _      _                
+ *  \ \        / / | |  |_   _|  __ \|  ____|  / ____(_)   | |    | |               
+ *   \ \  /\  / /__| |__  | | | |  | | |__    | (___  _  __| | ___| |__   __ _ _ __ 
+ *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|    \___ \| |/ _` |/ _ \ '_ \ / _` | '__|
+ *     \  /\  /  __/ |_) || |_| |__| | |____ _ ____) | | (_| |  __/ |_) | (_| | |   
+ *      \/  \/ \___|_.__/_____|_____/|______(_)_____/|_|\__,_|\___|_.__/ \__,_|_|   
+ *                                                                                                                                                     
  *  @author André Ferreira <andrehrf@gmail.com>
  *  @license MIT
  */
 -->
-<div class="wi-panelsbar-left">
+<div class="wi-sidebar-left">
     <%  for(var key in itens){
             if(itens[key].position == "left"){
     %>
-    <div class="wi-panelsbar-left-item" rel="#wi-panels-<%= key %>-panel" id="wi-panels-<%= key %>"><%= itens[key].display %></div>
+    <div class="wi-sidebar-left-item" rel="#wi-panels-<%= key %>-panel" id="wi-panels-<%= key %>"><%= itens[key].display %></div>
     <%
             }
         }
@@ -25,8 +25,8 @@
 <%  for(var key in itens){
         if(itens[key].position == "left"){
 %>
-<div class="wi-panelsbar-left-panel animated slideInLeft" id="wi-panels-<%= key %>-panel" rel="#wi-panels-<%= key %>">
-    <div class="wi-panelsbar-left-panel-contents">
+<div class="wi-sidebar-left-panel animated slideInLeft" id="wi-panels-<%= key %>-panel" rel="#wi-panels-<%= key %>">
+    <div class="wi-sidebar-left-panel-contents">
         <%- itens[key].panel %>
     </div>
 </div>
@@ -34,3 +34,28 @@
         }
     }
 %>
+
+<div class="wi-sidebar-right">
+    <%  for(var key in itens){
+            if(itens[key].position == "right"){
+    %>
+    <div class="wi-sidebar-right-item" rel="#wi-panels-<%= key %>-panel" id="wi-panels-<%= key %>"><%= itens[key].display %></div>
+    <%
+            }
+        }
+    %>
+</div>
+
+<%  for(var key in itens){
+        if(itens[key].position == "right"){
+%>
+<div class="wi-sidebar-right-panel animated slideInRight" id="wi-panels-<%= key %>-panel" rel="#wi-panels-<%= key %>">
+    <div class="wi-sidebar-right-panel-contents">
+        <%- itens[key].panel %>
+    </div>
+</div>
+<%
+        }
+    }
+%>
+
