@@ -12,8 +12,24 @@
 
 "use strict";
 
-let SystemException = require("../wi.core.exception.js"),
+let _ = require("lodash"),
+    SystemException = require("../wi.core.exception.js"),
     TemplateEngine = require("../wi.core.template.js");
+    
+_.mixin({
+    'sortKeysBy': function (obj, comparator) {
+        var keys = _.sortBy(_.keys(obj), function (key) {
+            return comparator ? comparator(obj[key], key) : key;
+        });
+                
+        var newobj = {};
+        
+        for(var key in keys)
+            newobj[keys[key]] = obj[keys[key]];
+        
+        return newobj;
+    }
+});
 
 module.exports = {    
     /**
@@ -28,7 +44,13 @@ module.exports = {
      * @params object item
      * @return this
      */ 
-    addItem: function(namespace, item){
+    addItem: function(namespace, item, index){
+        item.namespace = namespace;
+        item.index = index;
+        
+        if(index)
+            namespace = index + "_" + namespace;
+        
         if(typeof item == "object" && typeof namespace == "string")
             this.itens[namespace] = item;
         else
@@ -41,7 +63,8 @@ module.exports = {
      * @param object _this
      * @return string
      */
-    getTemplate: function(_this){
+    getTemplate: function(_this){   
+        this.itens = _.sortKeysBy(this.itens, (value, key) => { return value.index; });//Order by index
         return TemplateEngine(__dirname + "/template.ejs").seti18n(_this.i18n).render({itens: this.itens});
     }
 };
