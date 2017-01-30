@@ -99,9 +99,6 @@
     width: calc(100% - 13px);
     height: 100%;
     z-index: 99998;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
     margin-top: 2px;
     margin-left: 10px;
 }
