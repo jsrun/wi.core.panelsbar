@@ -63,8 +63,8 @@ module.exports = {
      * @param object _this
      * @return string
      */
-    getTemplate: function(_this){   
-        this.itens = _.sortKeysBy(this.itens, (value, key) => { return value.index; });//Order by index
-        return TemplateEngine(__dirname + "/template.ejs").seti18n(_this.i18n).render({itens: this.itens});
+    getTemplate: function(sidebar, i18n){   
+        sidebar.itens = _.sortKeysBy(sidebar.itens, (value, key) => { return value.index; });//Order by index
+        return TemplateEngine(__dirname + "/template.ejs").seti18n(i18n).render({itens: sidebar.itens});
     }
 };
