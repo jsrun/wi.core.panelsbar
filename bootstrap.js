@@ -12,9 +12,7 @@
 
 "use strict";
 
-let _ = require("lodash"),
-    SystemException = require("../wi.core.exception.js"),
-    TemplateEngine = require("../wi.core.template.js");
+let _ = require("lodash");
     
 _.mixin({
     'sortKeysBy': function (obj, comparator) {
@@ -54,7 +52,7 @@ module.exports = {
         if(typeof item == "object" && typeof namespace == "string")
             this.itens[namespace] = item;
         else
-            throw new SystemException("The default value for panels item is 'object' and namespace is 'string'.");
+            throw new "The default value for panels item is 'object' and namespace is 'string'.";
     },
     
     /**
@@ -63,8 +61,8 @@ module.exports = {
      * @param object _this
      * @return string
      */
-    getTemplate: function(sidebar, i18n){   
+    getTemplate: function(sidebar, i18n, template){   
         sidebar.itens = _.sortKeysBy(sidebar.itens, (value, key) => { return value.index; });//Order by index
-        return TemplateEngine(__dirname + "/template.ejs").seti18n(i18n).render({itens: sidebar.itens});
+        return new template(__dirname + "/template.ejs").seti18n(i18n).render({itens: sidebar.itens});
     }
 };

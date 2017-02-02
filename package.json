@@ -1,6 +1,6 @@
 {
     "name": "wi.core.sidebar",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "WebIDE side panels",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "license": "MIT",
